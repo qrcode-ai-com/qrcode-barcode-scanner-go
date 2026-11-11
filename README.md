@@ -6,20 +6,30 @@ command of the
 and returns its JSON report unchanged. It holds no decoder of its own, uses the standard library
 only and needs no cgo.
 
-> **Not published yet.** This package is checked in the engine repository against the released
-> `qrscan` 0.11.0. It has no tagged version: `go get` does not find it today.
-
 | | QR codes | Barcodes |
 | --- | --- | --- |
 | **Try the scanner live** | [QR code scanner](https://qrcode-ai.com/en-US/qr-code-scanner) | [Barcode scanner](https://qrcode-ai.com/en-US/barcode-scanner) |
 | **Go guide** | [QR code scanner for Go](https://qrcode-ai.com/en-US/qr-code-scanner/sdk/go) | [Barcode scanner for Go](https://qrcode-ai.com/en-US/barcode-scanner/sdk/go) |
 | **Create a code** | [QR code generator](https://qrcode-ai.com/en-US/qr-code-generator) | [Barcode generator](https://qrcode-ai.com/en-US/barcode-generator) |
 
+## Install
+
+```sh
+go get github.com/qrcode-ai-com/qrcode-barcode-scanner-go@v0.11.0
+```
+
+```go
+import qrscan "github.com/qrcode-ai-com/qrcode-barcode-scanner-go"
+```
+
+The package follows the engine it drives: version 0.11.x of the package works with `qrscan`
+0.11.x. The first version is 0.11.0.
+
 ## What you need
 
 - Go 1.24 or later. `CGO_ENABLED=0` works: there is no C code.
 - The `qrscan` command, version 0.11.x, installed separately. The
-  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/fe38529757bc732e2b5ab5a1983541257ca602ac/distribution/README.md) lists the routes: Homebrew, Scoop, the
+  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/e0d5b1271f04628efc183ea56e5ea8cc066c6755/distribution/README.md) lists the routes: Homebrew, Scoop, the
   Debian and RPM packages, the AUR, `cargo install`, the release archives and the container
   image. This package never downloads it.
 
@@ -114,7 +124,7 @@ on Linux, macOS and Windows against the released command.
 
 A Go module is fetched from the root of a repository at a tag, so the package is served from a
 small repository of its own, `qrcode-ai-com/qrcode-barcode-scanner-go`. Nothing there is edited
-by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/fe38529757bc732e2b5ab5a1983541257ca602ac/scripts/stage-go-package.py) writes its whole tree
+by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/e0d5b1271f04628efc183ea56e5ea8cc066c6755/scripts/stage-go-package.py) writes its whole tree
 from one commit of the engine repository, with the workflow of [`mirror/`](.github/workflows/), the two test
 images, the licence and a `SOURCE.json` that names the commit and the sha256 of every file. The
 same program checks that a tree is exactly that. Change the package here, then stage it again.
