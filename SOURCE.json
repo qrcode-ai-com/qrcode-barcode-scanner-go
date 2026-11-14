@@ -2,15 +2,15 @@
   "schema": "qrscan-go-stage/1",
   "engine": {
     "repository": "https://github.com/qrcode-ai-com/qrcode-barcode-scanner",
-    "revision": "0b8cc607536557dbe6a38aef2dd0a16f781224cf"
+    "revision": "816d1877e0803e86b4418c215b1fa1b33c04e991"
   },
   "files": {
     ".github/workflows/tests.yml": "6bf006d28fc63596fdfc84e4a84059d133fdacb51622f4dc3cafbcd2f6466327",
-    "LICENSE": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
-    "README.md": "ae7e006166f71cb4aab94709e1948a6085cce2ff0c1cc9e0a859aacb04f5482d",
+    "LICENSE": "f4d433b564117e27b6aaf8f2902f2200368f57bb2d8286129c2f1774c000295a",
+    "README.md": "acded20aab967d33ac4e7602512435082a74db1e09b713df1a177fe90810c0d1",
     "go.mod": "1defbd4b600e5bee89c3722ab6800c1d05f0f29be6e1e5da57e2ed3a3ad4f6d1",
-    "qrscan.go": "f43fb61c886a7498eac50456d813e78ddb7f5011a4722c8450d5fd9551efc91a",
-    "qrscan_test.go": "437b53139e2f0067413445b60c83a6f00a1ba8a34f4a9d670fca7eff4fd5c158",
+    "qrscan.go": "991284771c31afb15c920841431657424fb2a5fa74da62930703e487ae52db50",
+    "qrscan_test.go": "a9ccb40e1f55446ad0c01876be3751825715bc0f368107ecbacbcfa8d11d4aec",
     "testdata/fixtures/clean/gen_v5_q.png": "1dc399cad19623a145b20251cf1c0da42ea4f54fd79871a4dd796c9554822dd6",
     "testdata/fixtures/symbology/mixed-code128-qr.png": "c636e8d56df483ff1ec06dbe9b5bcba226c579f8fc1c3d10c4ccf4e100762ec8"
   }
