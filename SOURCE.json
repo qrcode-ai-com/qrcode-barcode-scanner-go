@@ -2,12 +2,12 @@
   "schema": "qrscan-go-stage/1",
   "engine": {
     "repository": "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust",
-    "revision": "5a924a1109f8e6739d9e95830be276d14ea3bd79"
+    "revision": "9b500a803039c27330f0a35a1fcf6fdf7d9f93e9"
   },
   "files": {
     ".github/workflows/tests.yml": "6bf006d28fc63596fdfc84e4a84059d133fdacb51622f4dc3cafbcd2f6466327",
     "LICENSE": "f4d433b564117e27b6aaf8f2902f2200368f57bb2d8286129c2f1774c000295a",
-    "README.md": "dad8b35bfcaba5e50e182eedc4e4dcad14a77e2c7ded05f2946a2022557956c4",
+    "README.md": "2cb8b30c44867adb35ea303dd965c3ec091da06e1467683a0e7d130faf990478",
     "go.mod": "1defbd4b600e5bee89c3722ab6800c1d05f0f29be6e1e5da57e2ed3a3ad4f6d1",
     "qrscan.go": "991284771c31afb15c920841431657424fb2a5fa74da62930703e487ae52db50",
     "qrscan_test.go": "a9ccb40e1f55446ad0c01876be3751825715bc0f368107ecbacbcfa8d11d4aec",
