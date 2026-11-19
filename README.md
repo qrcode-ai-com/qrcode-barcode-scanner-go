@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-go-dark.gif?v=387ba4179215">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-go-light.gif?v=01a3ad72d88e" alt="QR Code &amp; Barcode Scanner for Go: the Go logo, the quick start in Go, and a QR code and a barcode being read" width="100%">
+    </picture>
+  </a>
+</p>
+
 # QR Code & Barcode Scanner for Go
 
 <!-- qrcode-ai-readme-actions:v2 -->
@@ -28,15 +37,6 @@ Help me understand QR Code & Barcode Scanner for Go (bindings/go/README.md) for 
 </details>
 
 <!-- /qrcode-ai-readme-actions:v2 -->
-
-<p align="center">
-  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-go-dark.gif?v=387ba4179215">
-      <img src="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-go-light.gif?v=01a3ad72d88e" alt="QR Code &amp; Barcode Scanner for Go: the Go logo, the quick start in Go, and a QR code and a barcode being read" width="100%">
-    </picture>
-  </a>
-</p>
 
 Use the Go adapter in an existing Go service, batch job or command that can start a local process. Install qrscan separately and keep its version compatible with the adapter. The adapter forwards the engine report rather than translating identifiers into numbers, which matters for barcode values with leading zeroes.
 
@@ -76,7 +76,7 @@ The package follows the engine it drives: version 0.11.x of the package works wi
 
 - Go 1.24 or later. `CGO_ENABLED=0` works: there is no C code.
 - The `qrscan` command, version 0.11.x, installed separately. The
-  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/9fac51a96029d1816fa80ad62925b1dca21f3610/distribution/README.md) lists the routes: Homebrew, Scoop, the
+  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/27dd731c23302e25f90eb2f1ab66e7d3aa93cdc5/distribution/README.md) lists the routes: Homebrew, Scoop, the
   Debian and RPM packages, the AUR, `cargo install`, the release archives and the container
   image. This package never downloads it.
 
@@ -234,7 +234,7 @@ each one starts `qrscan` and hands you its report.
 
 A Go module is fetched from the root of a repository at a tag, so the package is served from a
 small repository of its own, `qrcode-ai-com/qrcode-barcode-scanner-go`. Nothing there is edited
-by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/9fac51a96029d1816fa80ad62925b1dca21f3610/scripts/stage-go-package.py) writes its whole tree
+by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/27dd731c23302e25f90eb2f1ab66e7d3aa93cdc5/scripts/stage-go-package.py) writes its whole tree
 from one commit of the engine repository, with the workflow of [`mirror/`](.github/workflows/), the two test
 images, the licence and a `SOURCE.json` that names the commit and the sha256 of every file. The
 same program checks that a tree is exactly that. Change the package here, then stage it again.
