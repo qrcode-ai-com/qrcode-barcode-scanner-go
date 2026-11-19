@@ -76,7 +76,7 @@ The package follows the engine it drives: version 0.11.x of the package works wi
 
 - Go 1.24 or later. `CGO_ENABLED=0` works: there is no C code.
 - The `qrscan` command, version 0.11.x, installed separately. The
-  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/27dd731c23302e25f90eb2f1ab66e7d3aa93cdc5/distribution/README.md) lists the routes: Homebrew, Scoop, the
+  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/5a924a1109f8e6739d9e95830be276d14ea3bd79/distribution/README.md) lists the routes: Homebrew, Scoop, the
   Debian and RPM packages, the AUR, `cargo install`, the release archives and the container
   image. This package never downloads it.
 
@@ -120,6 +120,18 @@ short. `qrscan.Unbounded` sets none: the result then does not depend on how busy
 Cancelling the context stops the command.
 
 ## Read the report
+
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#examples">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/examples-mixed-dark.png?v=385593c1c18d">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/examples-mixed-light.png?v=7f958679adcc" alt="A QR code and Code 128 decoded from the same image, each outlined where the engine measured it" width="100%">
+    </picture>
+  </a>
+</p>
+
+The picture is a recorded scan of one image that holds a QR code and a Code 128 barcode. Both come
+back in the same report, each with its format and the place where the engine measured it.
 
 `report.JSON` is the exact text the engine printed. Nothing is renamed, rounded or recalculated,
 so decode it yourself for the payload, the measured places and the trace. The other fields read
@@ -234,7 +246,7 @@ each one starts `qrscan` and hands you its report.
 
 A Go module is fetched from the root of a repository at a tag, so the package is served from a
 small repository of its own, `qrcode-ai-com/qrcode-barcode-scanner-go`. Nothing there is edited
-by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/27dd731c23302e25f90eb2f1ab66e7d3aa93cdc5/scripts/stage-go-package.py) writes its whole tree
+by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/5a924a1109f8e6739d9e95830be276d14ea3bd79/scripts/stage-go-package.py) writes its whole tree
 from one commit of the engine repository, with the workflow of [`mirror/`](.github/workflows/), the two test
 images, the licence and a `SOURCE.json` that names the commit and the sha256 of every file. The
 same program checks that a tree is exactly that. Change the package here, then stage it again.
