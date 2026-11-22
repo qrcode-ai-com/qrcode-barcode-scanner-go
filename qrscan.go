@@ -28,8 +28,8 @@ import (
 	"sync"
 )
 
-// SupportedEngine is the engine line this package was checked against: every 0.11.x.
-const SupportedEngine = "0.11"
+// SupportedEngine is the engine line this package was checked against: every 0.12.x.
+const SupportedEngine = "0.12"
 
 // Profile says how much work one scan does. The values are the ones `qrscan --profile` takes.
 type Profile string
