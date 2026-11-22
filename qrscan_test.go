@@ -83,7 +83,7 @@ func TestMixedImageReturnsBothCodesExactly(t *testing.T) {
 		if got := contents(report); !reflect.DeepEqual(got, both) {
 			t.Errorf("%s: detections %v, want each code once with its exact text and bytes", profile, got)
 		}
-		if report.ExitCode != 0 || !report.Found() || !report.Complete || report.EngineVersion != "0.11.0" {
+		if report.ExitCode != 0 || !report.Found() || !report.Complete || report.EngineVersion != "0.12.0" {
 			t.Errorf("%s: exit %d, found %v, complete %v, engine %q", profile, report.ExitCode, report.Found(), report.Complete, report.EngineVersion)
 		}
 		if profile == Frame && report.Score != nil {
@@ -255,7 +255,7 @@ func TestAMissingCommandIsReportedAndNotRemembered(t *testing.T) {
 func TestCapabilitiesNameTheInstalledEngine(t *testing.T) {
 	scanner := New(binary(t))
 	version, err := scanner.EngineVersion(context.Background())
-	if err != nil || version != "0.11.0" {
+	if err != nil || version != "0.12.0" {
 		t.Fatalf("got %q, %v", version, err)
 	}
 	data, err := scanner.Capabilities(context.Background())

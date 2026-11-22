@@ -50,6 +50,8 @@ command of the
 and returns its JSON report unchanged. It holds no decoder of its own, uses the standard library
 only and needs no cgo.
 
+## How it works
+
 <p align="center">
   <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#command-line">
     <picture>
@@ -59,24 +61,29 @@ only and needs no cgo.
   </a>
 </p>
 
+The picture shows the three steps. Your code passes the path of an image file, the installed
+`qrscan` command reads its codes, and your code reads the JSON report it returns. The next
+sections follow that order: install the package and `qrscan`, scan an image, then read the
+report.
+
 ## Install
 
 ```sh
-go get github.com/qrcode-ai-com/qrcode-barcode-scanner-go@v0.11.0
+go get github.com/qrcode-ai-com/qrcode-barcode-scanner-go@v0.12.0
 ```
 
 ```go
 import qrscan "github.com/qrcode-ai-com/qrcode-barcode-scanner-go"
 ```
 
-The package follows the engine it drives: version 0.11.x of the package works with `qrscan`
-0.11.x. The first version is 0.11.0.
+The package follows the engine it drives: version 0.12.x of the package works with `qrscan`
+0.12.x. The first version is 0.11.0.
 
 ## What you need
 
 - Go 1.24 or later. `CGO_ENABLED=0` works: there is no C code.
-- The `qrscan` command, version 0.11.x, installed separately. The
-  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/9b500a803039c27330f0a35a1fcf6fdf7d9f93e9/distribution/README.md) lists the routes: Homebrew, Scoop, the
+- The `qrscan` command, version 0.12.x, installed separately. The
+  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/fc7a18a401f2e0cf913a73e4391c519bb13dd82e/distribution/README.md) lists the routes: Homebrew, Scoop, the
   Debian and RPM packages, the AUR, `cargo install`, the release archives and the container
   image. This package never downloads it.
 
@@ -183,7 +190,7 @@ The engine's [supported formats](https://github.com/qrcode-ai-com/qrcode-barcode
 | Error | When |
 | --- | --- |
 | `qrscan.ErrBinaryNotFound` (with `errors.Is`) | `qrscan` could not be started: not installed, not on `PATH`, not executable. It is not remembered: install the command and the same `Scanner` works. |
-| `*qrscan.UnsupportedVersionError` | The installed `qrscan` is not 0.11.x. The check runs before the first scan. |
+| `*qrscan.UnsupportedVersionError` | The installed `qrscan` is not 0.12.x. The check runs before the first scan. |
 | `*qrscan.ScanError` | The engine refused the file or the options. `EngineCode` holds its code when it gives one, such as `QRS-001` for a file that is not an image. |
 | the context's error | The context was cancelled or its deadline passed; the command was stopped. |
 
@@ -246,7 +253,7 @@ each one starts `qrscan` and hands you its report.
 
 A Go module is fetched from the root of a repository at a tag, so the package is served from a
 small repository of its own, `qrcode-ai-com/qrcode-barcode-scanner-go`. Nothing there is edited
-by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/9b500a803039c27330f0a35a1fcf6fdf7d9f93e9/scripts/stage-go-package.py) writes its whole tree
+by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/fc7a18a401f2e0cf913a73e4391c519bb13dd82e/scripts/stage-go-package.py) writes its whole tree
 from one commit of the engine repository, with the workflow of [`mirror/`](.github/workflows/), the two test
 images, the licence and a `SOURCE.json` that names the commit and the sha256 of every file. The
 same program checks that a tree is exactly that. Change the package here, then stage it again.
