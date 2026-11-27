@@ -69,7 +69,7 @@ report.
 ## Install
 
 ```sh
-go get github.com/qrcode-ai-com/qrcode-barcode-scanner-go@v0.12.0
+go get github.com/qrcode-ai-com/qrcode-barcode-scanner-go@v0.12.2
 ```
 
 ```go
@@ -83,7 +83,7 @@ The package follows the engine it drives: version 0.12.x of the package works wi
 
 - Go 1.24 or later. `CGO_ENABLED=0` works: there is no C code.
 - The `qrscan` command, version 0.12.x, installed separately. The
-  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/fc7a18a401f2e0cf913a73e4391c519bb13dd82e/distribution/README.md) lists the routes: Homebrew, Scoop, the
+  [distribution guide](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/8eb984ad77c1b2320a77507557fedb276f50e289/distribution/README.md) lists the routes: Homebrew, Scoop, the
   Debian and RPM packages, the AUR, `cargo install`, the release archives and the container
   image. This package never downloads it.
 
@@ -253,7 +253,7 @@ each one starts `qrscan` and hands you its report.
 
 A Go module is fetched from the root of a repository at a tag, so the package is served from a
 small repository of its own, `qrcode-ai-com/qrcode-barcode-scanner-go`. Nothing there is edited
-by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/fc7a18a401f2e0cf913a73e4391c519bb13dd82e/scripts/stage-go-package.py) writes its whole tree
+by hand: [`scripts/stage-go-package.py`](https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/8eb984ad77c1b2320a77507557fedb276f50e289/scripts/stage-go-package.py) writes its whole tree
 from one commit of the engine repository, with the workflow of [`mirror/`](.github/workflows/), the two test
 images, the licence and a `SOURCE.json` that names the commit and the sha256 of every file. The
 same program checks that a tree is exactly that. Change the package here, then stage it again.
